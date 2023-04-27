@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BuzzQuizz</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1 onclick="BuzzQuizzInitialPage()">BuzzQuizz</h1>
+    </header>
+    <main>
+      <div class="screen">
+        <div class="quizzes-user hide">
+            <div class="your-created-quizzes">
+              <h2>Seus Quizzes</h2>
+              <ion-icon
+                name="add-circle"
+                class="novo-quizz"
+                onclick="Formulary()"
+              ></ion-icon>
+          </div>
+          <div class="created-quizzes">
+            <p>Você não criou nenhum quizz ainda :( </p>
+            <button type="button" onclick="Formulary()">Criar Quizz</button>
+          </div>
+        </div>
+        <div class="all-quizzes">
+          <h2>Todos os Quizzes</h2>
+          <div class="quizz-gallery"></div>
+        </div>
+      </div>
+      <div class="create-quizz hide">
+        <div class="new-quizz-basic-information">
+          <h2>Comece pelo começo</h2>
+          <form>
+            <div class="form-questions">
+              <input placeholder="Título do seu quizz" data-test="title-input"/>
+              <input placeholder="URL da imagem do seu quizz" data-test="img-input"/>
+              <input placeholder="Quantidade de perguntas do quizz" test="questions-amount-input"/>
+              <input placeholder="Quantidade de níveis do quizz" data-test="levels-amount-input"/>
+            </div>
+            <button type="button" onclick="quizzCreationBasic()" data-test="go-create-questions">Prosseguir pra criar perguntas</button>
+          </form>
+        </div>
+        <div class="new-quizz-questions hide">
+          <h2>Crie suas perguntas</h2>
+          <form>
+            <div class="new-questions">
+            </div>
+            <button type="button" onclick="questionsValidation()" data-test="go-create-levels">Prosseguir pra criar níveis</button>
+          </form>
+        </div>
+        <div class="new-quizz-levels hide">
+          <h2>Agora, decida os níveis</h2>
+          <form>
+            <div class="new-levels">
+            </div>
+            <button type="button" onclick="levelsValidation()" data-test="finish">Finalizar Quizz</button>
+          </form>
+        </div>
+ 
+      </div>
+      <div class="quizz-creation-success" id="qcs">
+        <h1>Seu quizz está pronto</h1>
+        <figure class="quizz-finish-creation"></figure>
+        <button class="access-quiz" onclick="goToQuizz()">
+          <p>Acessar Quizz</p>
+        </button>
+        <button class="go-to-homepage" onclick="BuzzQuizzInitialPage()">
+          <p>Voltar pra home</p>
+        </button>
+      </div>
+    </main>
+    <footer></footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
